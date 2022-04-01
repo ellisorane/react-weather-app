@@ -1,38 +1,87 @@
+html, body {
+  background-color: rgb(194, 224, 248);
+
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #f3872f;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.currentWeather {
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.currentWeather, .singleDay {
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  background: #2ebfe8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #2ebfe8 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #2ebfe8 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #2ebfe8 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ebfe8', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+}
+
+.additionalInfo, .singleDay {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sevenDay {
+  display: flex;
+  justify-content: space-around;
+}
+
+.singleDay {
+  width: fit-content;
+}
+
+.singleDay div {
+  padding: 10px;
+}
+
+
+@media(max-width: 1600px) {
+  .singleDay {
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+ 
+}
+
+@media(max-width: 1350px) {
+  .sevenDay {
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
+@media(max-width: 1000px) {
+  .currentWeather {
+    width: 90%;
+  }
+
+  .sevenDay {
+    display: flex;
+    flex-direction: column;
   }
 }
+
+
